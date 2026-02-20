@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ADSTERRA DOMAIN CHANGER V2</title>
+
+<style>
+body{
+font-family: Arial;
+background:#f2f2f2;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+flex-direction:column;
+}
+
+.box{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+width:320px;
+text-align:center;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+width:100%;
+padding:10px;
+margin-top:10px;
+border:none;
+border-radius:6px;
+font-size:16px;
+color:white;
+cursor:pointer;
+}
+
+.replace{background:#1976d2;}
+.copy{background:#2e7d32;}
+.clear{background:#d32f2f;}
+
+.footer{
+margin-top:20px;
+font-size:14px;
+text-align:center;
+}
+
+.footer b{
+color:#1976d2;
+}
+</style>
+
+</head>
+<body>
+
+<div class="box">
+
+<h2>ADSTERRA DOMAIN CHANGER V2</h2>
+
+<input type="text" id="inputLink" placeholder="Enter Original URL Here">
+
+<button class="replace" onclick="replaceLink()">Replace Link</button>
+
+<input type="text" id="outputLink" placeholder="Result Link Here">
+
+<button class="copy" onclick="copyLink()">Copy</button>
+
+<button class="clear" onclick="clearLink()">Clear</button>
+
+</div>
+
+<div class="footer">
+<p>Contact Owner <b>MR SHUVO AHAMMAD</b></p>
+<p>© 2026 Dev by <b>TRICK ZONE BOOST CENTER</b>. All rights Reserved</p>
+</div>
+
+<script>
+
+function replaceLink(){
+
+var original = document.getElementById("inputLink").value;
+
+if(original==""){
+alert("Enter Link First");
+return;
+}
+
+/* CHANGE DOMAIN */
+var newLink = original.replace(/https?:\/\/[^\/]+/i, "https://parasiteoutdoorsmix.com");
+
+/* SET BOTH INPUT AND OUTPUT */
+document.getElementById("inputLink").value = newLink;
+document.getElementById("outputLink").value = newLink;
+
+}
+
+function copyLink(){
+
+var copyText = document.getElementById("outputLink");
+
+copyText.select();
+document.execCommand("copy");
+
+alert("Link Copied");
+
+}
+
+function clearLink(){
+
+document.getElementById("inputLink").value="";
+document.getElementById("outputLink").value="";
+
+}
+
+</script>
+
+</body>
+</html>
