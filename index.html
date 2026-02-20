@@ -6,7 +6,7 @@
 
 <style>
 body{
-font-family: Arial;
+font-family:Arial;
 background:#f2f2f2;
 display:flex;
 justify-content:center;
@@ -54,12 +54,15 @@ font-size:14px;
 text-align:center;
 }
 
-.footer b{
+.footer a{
 color:#1976d2;
+text-decoration:none;
+font-weight:bold;
 }
 </style>
 
 </head>
+
 <body>
 
 <div class="box">
@@ -79,38 +82,57 @@ color:#1976d2;
 </div>
 
 <div class="footer">
-<p>Contact Owner <b>MR SHUVO AHAMMAD</b></p>
-<p>© 2026 Dev by <b>TRICK ZONE BOOST CENTER</b>. All rights Reserved</p>
+
+Contact Owner  
+<a href="https://t.me/SHUVO_MAHMUD01" target="_blank">
+MR SHUVO AHAMMAD
+</a>
+
+<br><br>
+
+Join Channel  
+<a href="https://t.me/boost_help_zone04" target="_blank">
+TRICK ZONE BOOST CENTER
+</a>
+
+<br><br>
+
+© 2026 Dev by TRICK ZONE BOOST CENTER. All rights Reserved
+
 </div>
 
 <script>
 
 function replaceLink(){
 
-var original = document.getElementById("inputLink").value;
+var input=document.getElementById("inputLink").value;
 
-if(original==""){
-alert("Enter Link First");
+if(input==""){
+alert("Enter link first");
 return;
 }
 
-/* CHANGE DOMAIN */
-var newLink = original.replace(/https?:\/\/[^\/]+/i, "https://parasiteoutdoorsmix.com");
+var key=input.split("key=")[1];
 
-/* SET BOTH INPUT AND OUTPUT */
-document.getElementById("inputLink").value = newLink;
-document.getElementById("outputLink").value = newLink;
+if(key){
+document.getElementById("outputLink").value=
+"https://parasiteoutdoorsmix.com/?key="+key;
+}else{
+document.getElementById("outputLink").value=
+"https://parasiteoutdoorsmix.com/";
+}
 
 }
 
 function copyLink(){
 
-var copyText = document.getElementById("outputLink");
+var copyText=document.getElementById("outputLink");
 
 copyText.select();
+
 document.execCommand("copy");
 
-alert("Link Copied");
+alert("Copied");
 
 }
 
